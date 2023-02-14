@@ -14,7 +14,7 @@ export default function Home() {
   useEffect(() => {
     async function getPersonInfor() {
       const response = await api.get('/people');
-      setCharacters(response.data.results);
+      setCharacters(response.data.results.slice(0, 8));
     }
     getPersonInfor();
   }, []);
